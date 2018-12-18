@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-package vadevops
+package bill
 
 class GlobalVars {
    static String foo = "bar"
