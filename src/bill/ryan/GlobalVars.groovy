@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-package bill
+package bill.ryan
 
 class GlobalVars {
    static String foo = "bar"
@@ -7,6 +7,6 @@ class GlobalVars {
 
    // refer to this in a pipeline using:
    //
-   // import vadevops.GlobalVars
+   // import bill.ryan.GlobalVars
    // println GlobalVars.foo
 }
