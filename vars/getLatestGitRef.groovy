@@ -1,8 +1,12 @@
 #!/usr/bin/env groovy
 import org.kohsuke.github.GitHub
+import bill.ryan.GlobalVars
 
-def call(String org, String repo, String branch) {
+def call(Map args=null, String repo) {
+  echo "Vars: args=[${args}] repo=[${repo}] GH_ORG=[${GlobalVars.GH_ORG}]"
+  String branch = (args.branch == null) ? 'master' : args.branch
+
   def github = GitHub.connectAnonymously()
-  def r = github.getRepository(org + '/' + repo)
+  def r = github.getRepository(GlobalVars.GH_ORG + '/' + repo)
   return r.getBranch(branch).getSHA1()
 }
